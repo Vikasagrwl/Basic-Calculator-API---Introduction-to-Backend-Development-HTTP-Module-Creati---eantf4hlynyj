@@ -54,7 +54,7 @@ app.post('/sub', (req, res) => {
             status: 'error',
             message: 'Underflow'
         });
-    } else if (num1 > 1000000 || num2 > 1000000 || num1 - num2 > 1000000) {
+    } else if (num1 > 1000000 || num2 > 1000000) {
         res.status(400).json({
             status: 'error',
             message: 'Overflow'
@@ -80,7 +80,7 @@ app.post('/multiply', (req, res) => {
             status: 'error',
             message: 'Underflow'
         });
-    } else if (num1 > 1000000 || num2 > 1000000 || num1 * num2 > 1000000) {
+    } else if (num1 > 1000000 || num2 > 1000000) {
         res.status(400).json({
             status: 'error',
             message: 'Overflow'
@@ -111,7 +111,7 @@ app.post('/divide', (req, res) => {
         });
     }
 
-    if (result < -1000000) {
+    if (num1/num2 < -1000000) {
         return res.status(400).json({
             status: 'error',
             message: 'Underflow'
