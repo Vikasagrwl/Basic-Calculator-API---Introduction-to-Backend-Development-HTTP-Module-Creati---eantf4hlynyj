@@ -80,7 +80,7 @@ app.post('/multiply', (req, res) => {
             status: 'error',
             message: 'Underflow'
         });
-    } else if (num1 > 1000000 || num2 > 1000000) {
+    } else if (num1 > 1000000 || num2 > 1000000 || num1 * num2 > 1000000) {
         res.status(200).json({
             status: 'error',
             message: 'Overflow'
